@@ -1,6 +1,6 @@
 \documentclass[12pt,twoside,a4paper]{article}
 \usepackage{amssymb}
-\usepackage{fullpage}
+%\usepackage{fullpage}
 \usepackage[T1]{fontenc}
 \usepackage[latin1]{inputenc}
 \usepackage[french]{babel}
@@ -9,7 +9,7 @@
 %\usepackage{colortab} % or
 \usepackage{colortbl}
 \usepackage{arydshln}
-\usepackage{wasysym}
+%\usepackage{wasysym}
 \usepackage{txfonts}
 \usepackage{textcomp}
 \usepackage{graphicx}
@@ -17,322 +17,38 @@
 \usepackage{numprint}
 \usepackage[usenames, dvipsnames]{xcolor}
 \usepackage{tikz}
-\usetikzlibrary{shapes.geometric}
-\usetikzlibrary{shapes.multipart}
+%\usetikzlibrary{shapes.geometric}
+%\usetikzlibrary{shapes.multipart}
 \usepackage{enumitem}
+\usepackage{minitoc}
+
 
 \everymath{\displaystyle}
 \begin{document}
-	
-	\linespread{1,5} %Interligne 1,5
-	\thispagestyle{empty} %Cette commande sert à enlever la pagination sur la page titre
-	\begin{center} % Centre le texte
-		\textbf{Introduction à latex} \\
-		\vspace{6 cm}
-		Présenté par\\
-		Jessica Bérubé \\
-		\vspace{6 cm}
-		Travail présenté dans le cadre du cours de\\
-		Histoire de la mathématique\\
-		\vspace{6 cm}
-		\today 
-	\end{center} %Arrête de centrer le texte
-	\newpage %Nouvelle page
-	
-	
-	\setcounter{page}{1} %On demande de compter les pages à partir d'ici à la page 1
-	\tableofcontents %Ajoute la table des matières
-	
-	\newpage  %Nouvelle page
-	
-	\listoffigures %Ajoute la table des images (vous pouvez l'enlever pour les travaux courts)
-	
-	\newpage
-	
-	\section{Premier Titre}
 
-	\subsection{Sous-titre}
-	
-	\subsubsection{Sous-sous-titre}
+\linespread{1,5} %Interligne 1,5
+\thispagestyle{empty} %Cette commande sert Ã  enlever la pagination sur la page titre
+\begin{center} % Centre le texte
+\textbf{} \\
+\vspace{5 cm}
+Pr\'esent� par\\
+Florence Duperr� et Alexandra Gobeil \\
+\vspace{5 cm}
+Travail pr�sent� dans le cadre du cours de\\
+Histoire de la math�matique\\
+\vspace{5 cm}
+\today 
+\end{center} %Arrêter de centrer le texte
+\newpage %Nouvelle page
 
-	\subsection{Sous-titre}
-	
-	\newpage
-	
-	\section{Quelques informations supplémentaires}
-	
-	\subsection{Les caractères spéciaux}
-	
-	Pour faire apparaître certains caractères, par exemple \$, \% ou même le \c c, il faut mettre le symbole $\backslash$ devant pour le faire apparaître dans votre texte. 
-	
-	\subsection{Les énumérations}
-	
-	Il y a deux commandes pour faire des énumérations. On utilise la commande \textit{enumerate} pour les énumérations chiffrées (1, 2, 3, $\ldots$) et la commande \textit{itemize} pour les énumérations non chiffrées ($\bullet$, $\circ$, \checked, $\ldots$). Pour faire plusieurs niveaux de numérotation, on utilise la même commande à l'intérieur de la commande. \\
-	
-	Vous pouvez également très bien utiliser \textit{enumerate} et utiliser les symboles de votre choix (même si ce n'est pas chiffré). 
-	
-	\subsubsection{Premier exemple d'arborescence avec \textit{enumerate}}
-	
-	\begin{enumerate} % À utiliser pour faire des énumérations
-		\item Premier choix % On utilise le \item pour identifier ce qu'on numérote. Si on n'utilise aucune autre option, il utilise des chiffres comme numérotation.
-		\begin{enumerate}
-			\item[1.1] Sous-choix 1
-			\item[1.2] Sous-choix 2
-			\begin{enumerate}
-				\item[1.2.1] Sous-sous-choix
-			\end{enumerate}
-			\item[1.3] Sous-choix 3
-		\end{enumerate}
-		\item Deuxième choix
-		\item Troisième choix
-	\end{enumerate}
-	
-	\subsubsection{Deuxième exemple d'arborescence avec \textit{itemize}}
-	
-	\begin{itemize} % Autre fonction pour utiliser pour faire des énumérations
-		\item[$\bullet$] Option 1 % Vous pouvez mettre entre crochet le symbole que vous souhaitez utiliser pour votre énumération
-		\item[$\bullet$] Option 2
-		\begin{enumerate}
-			\item[$\circ$] Option 2.1
-			\item[$\circ$] Option 2.2
-			\begin{enumerate}
-				\item[$\sun$] Option soleil!
-			\end{enumerate}
-			\item[$\circ$] option 2.3
-		\end{enumerate}
-		\item[$\bullet$] Option 3
-	\end{itemize}
-	
-	\subsection{Les citations}
-	
-	\subsection{Les équations}
-	
-	\subsubsection{La commande \textit{displaymath}}
-	La commande \textit{displaymath} va centrer les équations et ne numérotera pas les différentes équations. C'est la version la plus polyvalente pour travailler vos équations. Par exemple, la formule pour trouver les zéros de fonction est 
-	
-	\begin{displaymath}
-		y=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
-	\end{displaymath}
-	
-	\noindent On peut également l'utiliser pour ajouter des matrices en la combinant avec la fonction \textit{array}. %La commande noindent indique que nous souhaitons commencer notre ligne au bord de la marge. 
-	La fonction \textit{array} utilise plusieurs paramètres. Vous pouvez également l'utiliser pour la création de tableaux. La première accolade \{ \} identifie l'emplacement des colonnes, l=à gauche, c= centrer et r=à droite. Le nombre de lettres indique le nombre de colonnes utilisé dans votre tableau. 
-	\begin{displaymath}
-		\mathbf{X} =
-		\left( \begin{array}{ccc}
-			x_{11} & x_{12} & \ldots \\
-			x_{21} & x_{22} & \ldots \\
-			\vdots & \vdots & \ddots
-		\end{array} \right)
-	\end{displaymath}
-	
-	\noindent La fonction \textit{$\backslash$left} et \textit{$\backslash$right} indique à Latex qu'on applique les caractères suivant la commande pour tout ce qui se retrouve entre le left et le right. 
-	\begin{displaymath}
-		y = \left\{ \begin{array}{ll}
-			a & \textrm{si $d>c$}\\
-			b+x & \textrm{le matin}\\
-			l & \textrm{la journée}
-		\end{array} \right.
-	\end{displaymath}
-	
-	\noindent On doit également l'utiliser dans des cas plus simples, par exemple
-	\begin{displaymath}
-		x+4 = \left(\frac{(x-3)\cdot(x+2)}{x+5}\right)-3
-	\end{displaymath}
-	
-	D'autres exemples : 
-	\begin{displaymath}
-		\lim_{n \to \infty}
-		\sum_{k=1}^n \frac{1}{k^2}
-		= \frac{\pi^2}{6}
-	\end{displaymath}
-	
-	\subsubsection{La commande \textit{equation}}
-	La commande équation se travaille comme la commande displaymath, à l'exception qu'elle va numéroter chacune des équations. 
-	
-	\begin{equation}
-		e^{i\pi}+1=0 \qquad \textrm{La plus belle équation au monde} %la commande \qquad permet de faire un espace horizontale dans une équation et la commande \textrm{ } permet d'écrire du texte en mode mathématique
-	\end{equation}
-	\begin{equation} \label{eq} %
-		\cos^2(x)+\sin^2(x)=1 
-	\end{equation}
-	
-	\begin{equation}
-		x^{2} \geq 0\qquad
-		\textrm{pour tout }
-		x\in\mathbf{R}
-	\end{equation}
-	
-	\subsubsection{La commande \textit{eqnarray}}
-	
-	
-	Si vous souhaitez voir vos égalités sur la même ligne  : 
-	\begin{eqnarray}
-		f(x) & = & \cos x \nonumber\\ %\nonumber indique qu'on ne voulait pas de numéro pour cette ligne
-		f'(x) & = & -\sin x \\
-		\int_{0}^{x} f(y)\,dy &
-		= & \sin x
-	\end{eqnarray}
-	
-	
-	
-	
-	
-	
-	
-	\subsubsection{Autre commande en vrak}
-	\begin{itemize}
-		\item L'utilisation du \_ pour mettre un texte en indice $a_1$, $a_{21}$
-		\item L'utilisation de l'accent circonflexe pour mettre en exposant $e^x$, $e^{3x}$, $a^{i}_{ij}$
-		\item La commande \textit{sqrt} pour la racine  $\sqrt{1+9^2-x_3}$, $\sqrt[3]{-8}$
-		\item La commande \textit{overline} et \textit{underline} pour surligner  $\overline{m+n}$ ou encore $\underline{a-b}$
-		\item La commande \textit{underbrace} et \textit{overbrace} permet de mettre une accolade au-dessus ou en dessous d'une portion de texte $\underbrace{ a+b+\cdots+z }_{26}$ et $\overbrace{ a+b+\cdots+z }_{26}$
-		\item Plein de flèches et de vecteurs! $x\leftrightarrow y$ $\vec{u}$ $\vec{x}$
-		
-	\end{itemize}
-	
-	
-	\subsection{Les tableaux}
-	
-	Pour créer des tableaux, on utilise la commande tabular ou array. La commande array doit être utilisé en mode mathématique, ce qui n'est pas nécessaire avec tabular. 
-	
-	\begin{center}
-		\begin{tabular}{|l|c|l|}
-			\hline
-			J'aime & beaucoup & latex!\\
-			\hline
-		\end{tabular}
-	\end{center}
-	
-	\newpage
-	\subsection{La magnifique bibliothèque \textit{Tikz}}
-	Exemple de l'utilisation de la bibliothèque \textit{Tikz} (un peu plus avancé que ce dont vous aurez besoin mais ô combien agréable!)
-	
-	\begin{center}
-		\begin{tikzpicture}
-			\draw[very thin, gray] (-5,0) grid (5,5);
-			\draw[>-latex] (0,0)--(0,5.5);
-			\draw[>-latex] (-5,0)--(5.5,0);
-			\draw (5.5,0) node[below left] {x};
-			\draw (0,5.5) node[below left] {y};
-			\draw (0,0) node[below] {0};
-			\draw (1,0) node[below] {1};
-			\draw (0,1) node[left] {1};
-			\draw[very thick] (-4,0)--(-4,4)--(-2,4)--(-2,0)--(0,0)--(0,2)--(1,2)--(1,3)--(3,3)--(3,2)--(4,2)--(4,0);
-		\end{tikzpicture}
-	\end{center}
-	
-	\begin{center}
-		\begin{tikzpicture}[scale=0.5,every text node part/.style={align=center}]
-			\draw[fill=ProcessBlue] (0,0)--(0,10)--(10,10)--(10,0)--(0,0);
-			\draw[fill=Orange] (0,0)--(0,-10)--(-10,-10)--(-10,0)--(0,0);
-			\draw[fill=Goldenrod] (0,0)--(0,-10)--(10,-10)--(10,0)--(0,0);
-			\draw[fill=LimeGreen] (0,0)--(0,10)--(-10,10)--(-10,0)--(0,0);
-			\draw[color=gray] (-10,-10) grid (10,10);
-			\draw[very thick,<->,>=latex] (-11,0)--(11,0);
-			\draw[very thick,<->,>=latex] (0,-11)--(0,11);
-			\draw (11,0) node[below] {x};
-			\draw (0,11) node[right] {y};
-			\node (x) at (14,2) {\textcolor{RubineRed}{Axe des abscisses}};
-			\node (y) at (4,12) {\textcolor{Violet}{Axe des ordonnées}};
-			\draw[->,>=latex,color=Violet] (0,8)--(y);
-			\draw[->,>=latex,color=RubineRed] (8,0)--(x);
-			\node (o) at (2,2) {\textcolor{Maroon}{Origine}};
-			\draw[->,>=latex,color=Maroon] (0,0)--(o);
-			\draw (5,5) node {Quadrant 1\\ $(+,+)$};
-			\draw (-5,5) node {Quadrant 2\\ $(-,+)$};
-			\draw (-5,-5) node {Quadrant 3 \\ $(-,-)$};
-			\draw (5,-5) node {Quadrant 4 \\$(+,-)$};
-			
-			\draw (1,0) node[below] {1};
-			\draw (2,0) node[below] {2};
-			\draw (3,0) node[below] {3};
-			\draw (4,0) node[below] {4};
-			\draw (5,0) node[below] {5};
-			\draw (6,0) node[below] {6};
-			\draw (7,0) node[below] {7};
-			\draw (8,0) node[below] {8};
-			\draw (9,0) node[below] {9};
-			\draw (10,0) node[below] {10};
-			\draw (-1,0) node[below] {-1};
-			\draw (-2,0) node[below] {-2};
-			\draw (-3,0) node[below] {-3};
-			\draw (-4,0) node[below] {-4};
-			\draw (-5,0) node[below] {-5};
-			\draw (-6,0) node[below] {-6};
-			\draw (-7,0) node[below] {-7};
-			\draw (-8,0) node[below] {-8};
-			\draw (-9,0) node[below] {-9};
-			\draw (-10,0) node[below] {-10};
-			\draw (0,0) node[below] {0};
-			
-			\draw (0,1) node[left] {1};
-			\draw (0,2) node[left] {2};
-			\draw (0,3) node[left] {3};
-			\draw (0,4) node[left] {4};
-			\draw (0,5) node[left] {5};
-			\draw (0,6) node[left] {6};
-			\draw (0,7) node[left] {7};
-			\draw (0,8) node[left] {8};
-			\draw (0,9) node[left] {9};
-			\draw (0,10) node[left] {10};
-			\draw (0,-1) node[left] {-1};
-			\draw (0,-2) node[left] {-2};
-			\draw (0,-3) node[left] {-3};
-			\draw (0,-4) node[left] {-4};
-			\draw (0,-5) node[left] {-5};
-			\draw (0,-6) node[left] {-6};
-			\draw (0,-7) node[left] {-7};
-			\draw (0,-8) node[left] {-8};
-			\draw (0,-9) node[left] {-9};
-			\draw (0,-10) node[left] {-10};
-			\draw (0,0) node[left] {0};
-			
-		\end{tikzpicture}
-	\end{center}
-	\bigskip
-	
-	
-	\begin{center}
-		\begin{tikzpicture}[scale=0.7]
-			
-			\fill[color=gray!20] (-4,3)--(10,3)--(10,2)--(12,4)--(10,6)--(10,5)--(-4,5)--(-4,3);
-			
-			\draw (0,0)--(8,0)--(8,8)--(0,8)--(0,0);
-			\draw (0,4)--(8,4);
-			\draw (4,0)--(4,8);
-			\draw (2,8)--(2,16)--(6,16)--(6,8);
-			\draw (2,12)--(6,12);
-			
-			\draw (2,2.5) node {\Huge{A}};
-			\draw (2,1) node {Additions};
-			
-			\draw (6,2.5) node {\Huge{S}};
-			\draw (6,1) node {Soustractions};
-			
-			\draw (2,6.5) node {\Huge{M}};
-			\draw (2,5) node {Multiplications};
-			
-			\draw (6,6.5) node {\Huge{D}};
-			\draw (6,5) node {Divisions};
-			
-			\draw (4,10.5) node {\Huge{E}};
-			\draw (4,9) node {Exposants};
-			
-			\draw (4,14.5) node {\Huge{P}};
-			\draw (4,13) node {Parenthèses};
-			
-			\draw (-2.5,4) node {de gauche};
-			\draw (10.5,4) node {à droite};
-			
-		\end{tikzpicture}
-	\end{center}
-	
-	\newpage
-	{\small
-		\begin{thebibliography}{99}
-			\bibitem{Ro} A. Ross,
-			\emph{Principes de mathématiques et de logique},
-			2009
-		\end{thebibliography}
-	}
+
+\setcounter{page}{1} %On demande de compter les pages à partir d'ici à la page 1
+\tableofcontents %Ajoute la table des matière
+
+\newpage  %Nouvelle page
+
+%\listoffigures %Ajoute la table des images (vous pouvez l'enlever pour les travaux courts)
+
+\newpage
+\section{Introduction}
 \end{document}
